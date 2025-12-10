@@ -1,4 +1,30 @@
 package io.github.mildesttoucan.permasnow.mixin;
 
-public class SnowLayeredBlockMixin {
+import com.llamalad7.mixinextras.expression.Definition;
+import com.llamalad7.mixinextras.expression.Expression;
+import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
+import io.github.mildesttoucan.permasnow.PermaSnow;
+import net.minecraft.world.level.block.SnowLayerBlock;
+import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.injection.At;
+
+@Mixin(SnowLayerBlock.class)
+@SuppressWarnings("unused") // Class shows up as unused when abstract due to MCDev bug.
+abstract class SnowLayeredBlockMixin {
+
+    @Definition(id = "getBrightness", method = "Lnet/minecraft/server/level/ServerLevel;getBrightness(Lnet/minecraft/world/level/LightLayer;Lnet/minecraft/core/BlockPos;)I")
+    @Expression("?.getBrightness(?, ?) > ?")
+    @ModifyExpressionValue(method = "randomTick", at = @At("MIXINEXTRAS:EXPRESSION"))
+    private boolean addConfigCondition(boolean original) {
+        return original && PermaSnow.CONFIG.shouldSnowMelt;
+    }
+
+    @Definition(id = "getBrightness", method = "Lnet/minecraft/server/level/ServerLevel;getBrightness(Lnet/minecraft/world/level/LightLayer;Lnet/minecraft/core/BlockPos;)I")
+    @Expression("?.getBrightness(?, ?) > @(?)")
+    @ModifyExpressionValue(method = "randomTick", at = @At("MIXINEXTRAS:EXPRESSION"))
+    private int changeRequiredLight(int original) {
+        // Reference the original value to best avoid snuffing out other Mixins targeting the Vanilla value.
+        if (original == PermaSnow.CONFIG.meltingLightLevel) return original;
+        return PermaSnow.CONFIG.meltingLightLevel;
+    }
 }

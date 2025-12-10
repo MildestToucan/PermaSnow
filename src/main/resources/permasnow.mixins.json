@@ -3,6 +3,7 @@
 	"package": "io.github.mildesttoucan.permasnow.mixin",
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
+		"SnowLayeredBlockMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
