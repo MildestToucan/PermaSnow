@@ -1,0 +1,30 @@
+{
+	"schemaVersion": 1,
+	"id": "permasnow",
+	"version": "${version}",
+	"name": "PermaSnow",
+	"description": "PermaSnow is a very simple MC mod that adds a config-based toggle to snow melting due to light.",
+	"authors": [
+		"GauntRecluse"
+	],
+	"contact": {
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "MIT",
+	"icon": "assets/permasnow/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"io.github.mildesttoucan.permasnow.PermaSnow"
+		]
+	},
+	"mixins": [
+		"permasnow.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.18.2",
+		"minecraft": "~1.21.10",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}
