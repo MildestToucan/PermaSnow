@@ -17,7 +17,7 @@
 		"issues": "https://github.com/MildestToucan/PermaSnow/issues"
 	},
 	"license": "MIT",
-	"icon": "assets/permasnow/actual_icon.png",
+	"icon": "assets/permasnow/actual_icon_square.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
