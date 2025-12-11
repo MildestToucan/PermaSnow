@@ -5,14 +5,19 @@
 	"name": "PermaSnow",
 	"description": "PermaSnow is a very simple MC mod that adds a config-based toggle to snow melting due to light.",
 	"authors": [
-		"GauntRecluse"
+		{
+			"contact": {
+				"email": "introvertpale@gmail.com"
+			},
+			"name": "GauntRecluse"
+		}
 	],
 	"contact": {
 		"sources": "https://github.com/MildestToucan/PermaSnow",
 		"issues": "https://github.com/MildestToucan/PermaSnow/issues"
 	},
 	"license": "MIT",
-	"icon": "assets/permasnow/icon.png",
+	"icon": "assets/permasnow/actual_icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
