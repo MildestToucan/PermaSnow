@@ -14,6 +14,32 @@ repositories {
 	maven {
 		url 'https://repo.sleeping.town/'
 	}
+
+	maven {
+		name = "Terraformers"
+		url = "https://maven.terraformersmc.com/"
+	}
+
+
+	maven {
+		name = "Xander Maven"
+		url = "https://maven.isxander.dev/releases"
+	}
+
+
+	exclusiveContent {
+		forRepository {
+			maven {
+				name = "Modrinth"
+				url = "https://api.modrinth.com/maven"
+			}
+		}
+		filter {
+			includeGroup "maven.modrinth"
+		}
+	}
+
+
 }
 
 dependencies {
@@ -27,8 +53,19 @@ dependencies {
 	// FabricAPI
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
+	// Kaleido Config
 	implementation "folk.sisby:kaleido-config:${project.kaleido_version}"
 	include "folk.sisby:kaleido-config:${project.kaleido_version}"
+
+	// McQoy Config
+	modImplementation "maven.modrinth:mcqoy:${project.mcqoy_version}"
+
+	// YACL, required by McQoy
+	modImplementation "dev.isxander:yet-another-config-lib:${project.yacl_version}"
+
+	// ModMenu
+	modImplementation "com.terraformersmc:modmenu:${project.modmenu_version}"
+
 }
 
 processResources {

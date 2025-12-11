@@ -8,7 +8,8 @@
 		"GauntRecluse"
 	],
 	"contact": {
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"sources": "https://github.com/MildestToucan/PermaSnow",
+		"issues": "https://github.com/MildestToucan/PermaSnow/issues"
 	},
 	"license": "MIT",
 	"icon": "assets/permasnow/icon.png",
@@ -26,5 +27,8 @@
 		"minecraft": "~1.21.10",
 		"java": ">=21",
 		"fabric-api": "*"
+	},
+	"recommends": {
+		"mcqoy": "0.3.3+1.3.2"
 	}
 }
