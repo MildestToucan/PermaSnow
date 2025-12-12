@@ -1,3 +1,5 @@
+<img width="396" height="396" alt="actual_icon_square" src="https://github.com/user-attachments/assets/5e86862a-f37e-4874-8610-8c92ca8ab2ed" />  
+
 Dont melt my snowy builds!
 ======
 ## Because building in snowy biomes shouldn't require melting it all.
